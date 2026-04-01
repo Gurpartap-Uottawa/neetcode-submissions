@@ -1,0 +1,12 @@
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> minheap = new PriorityQueue<Integer>();
+        for(int num:nums){
+            minheap.offer(num);
+        }
+        while(minheap.size()>k){
+            minheap.poll();
+        }
+        return minheap.peek();
+    }
+}
